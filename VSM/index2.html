@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Value Stream Map (Coordenador de Projetos)</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #0066cc, #003366); /* Gradiente azul escuro para azul claro */
+        }
+
+        #container {
+            text-align: center;
+        }
+
+        svg {
+            cursor: pointer;
+            border: none; /* Removido a borda */
+            background: linear-gradient(to bottom, #6c00d0, #99ccff); /* Gradiente azul claro para azul mais claro */
+            margin-top: 20px; /* Ajuste da margem no topo do svg */
+            border-radius: 0; /* Removido o arredondamento dos cantos */
+            position: relative;
+        }
+
+        text {
+            pointer-events: none;
+            font-weight: bold;
+            fill: #fff;
+        }
+
+        h1 {
+            color: #fff; /* Alterado para branco */
+            padding: 10px; /* Adicionado espaço interno ao header */
+            margin: 0; /* Removido a margem padrão do h1 */
+        }
+
+        .arrow {
+            fill: #666;
+            stroke: none;
+            transform-origin: 50% 50%;
+        }
+
+        .arrow-down {
+            fill: #666;
+            stroke: none;
+            transform-origin: 50% 50%;
+            transform: rotate(180deg);
+        }
+
+        #logoInovacode {
+            position: absolute;
+            left: 50px; /* Ajuste da posição conforme necessário */
+            width: 120px; /* Reduzido o tamanho da logo */
+            height: auto;
+        }
+
+        #logoLeanSixSigma {
+            position: absolute;
+            top: 13px;
+            left: 190px; /* Ajuste da posição conforme necessário */
+            width: 50px; /* Reduzido o tamanho da logo */
+            height: auto;
+        }
+
+        polygon {
+            stroke: #fff; /* Adicionada cor da borda branca */
+            stroke-width: 3; /* Adicionada largura da borda */
+            transition: box-shadow 1s; /* Adicionada transição para o efeito de sombra no hover */
+        }
+
+        polygon:hover {
+            box-shadow: 0 0 20px 20px rgb(255, 3, 3); /* Efeito de sombra no hover */
+        }
+
+        /* Cores mais intensas para os polígonos */
+        #solicitacaoInicial {
+            fill: #4285F4;
+        }
+
+        #comunicacaoVendedor {
+            fill: #FBBC05;
+        }
+
+        #puxarProposta {
+            fill: #34A853;
+        }
+
+        #verificacaoPOC {
+            fill: #EA4335;
+        }
+
+        #analiseArquitetura {
+            fill: #673AB7;
+        }
+
+        #revisaoContratoPOC {
+            fill: #1E88E5;
+        }
+
+        #solicitacaoContratoJuridico {
+            fill: #FFA726;
+        }
+
+        #documentacaoAnaliseDados {
+            fill: #43A047;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="./img/Inovacode_logo_branca_2-removebg-preview.png" alt="Inovacode Logo" id="logoInovacode">
+        <img src="./img/logo_black_betl_six_sigma-removebg-preview.png" alt="Lean Six Sigma Logo" id="logoLeanSixSigma">
+        <h1>Value Stream Map (Coordenador de Projetos)</h1>
+        <svg width="1500" height="800" id="leanSvg">
+            <!-- Adicione setas -->
+            <!-- Adicione setas -->
+            <!-- Processo: Solicitação Inicial -->
+<polygon points="50,50 280,50 280,200 50,200" fill="#4285F4" id="solicitacaoInicial" />
+<text x="165" y="125" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+    <tspan x="165" dy="-0.6em">Solicitação Inicial</tspan>
+</text>
+<image xlink:href="./img/avanco-rapido.png" x="300" y="110" width="30" height="30" class="arrow" />
+
+<!-- Processo: Análise da Arquitetura da Solução -->
+<polygon points="350,50 580,50 580,200 350,200" fill="#FBBC05" id="analiseArquitetura" />
+<text x="465" y="125" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+    <tspan x="465" dy="-0.6em">Análise da Arquitetura</tspan>
+    <tspan x="465" dy="1.2em">da Solução</tspan>
+</text>
+<image xlink:href="./img/avanco-rapido.png" x="600" y="110" width="30" height="30" class="arrow" />
+
+<!-- Processo: Inserção nas Sprints de Suporte -->
+<polygon points="650,50 880,50 880,200 650,200" fill="#34A853" id="insercaoSprintsSuporte" />
+<text x="765" y="125" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+    <tspan x="765" dy="-0.6em">Inserção nas Sprints</tspan>
+    <tspan x="765" dy="1.2em">de Suporte</tspan>
+</text>
+<image xlink:href="./img/avanco-rapido.png" x="900" y="110" width="30" height="30" class="arrow" />
+
+<!-- Processo: Gestão de Equipamentos -->
+<polygon points="950,50 1180,50 1180,200 950,200" fill="#EA4335" id="gestaoEquipamentos" />
+<text x="1065" y="125" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+    <tspan x="1065" dy="-0.6em">Gestão de Equipamentos</tspan>
+</text>
+<image xlink:href="./img/avanco-rapido.png" x="1200" y="110" width="30" height="30" class="arrow" />
+
+<!-- Processo: Montagem e Testes -->
+<polygon points="1250,50 1480,50 1480,200 1250,200" fill="#673AB7" id="montagemTestes" />
+<text x="1365" y="125" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+    <tspan x="1365" dy="-0.6em">Montagem e Testes</tspan>
+</text>
+<image xlink:href="./img/avanco-rapido.png" x="1500" y="110" width="30" height="30" class="arrow" />
+
+<!-- Processo: Confirmação de Detalhes -->
+<polygon points="50,250 280,250 280,400 50,400" fill="#1E88E5" id="confirmacaoDetalhes" />
+<text x="165" y="325" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+    <tspan x="165" dy="-0.6em">Confirmação de Detalhes</tspan>
+</text>
+<image xlink:href="./img/avanco-rapido.png" x="300" y="310" width="30" height="30" class="arrow" />
+
+<!-- Processo: Monitoramento e Follow-ups -->
+<polygon points="350,250 580,250 580,400 350,400" fill="#FFA726" id="monitoramentoFollowUps" />
+<text x="465" y="325" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+    <tspan x="465" dy="-0.6em">Monitoramento e</tspan>
+    <tspan x="465" dy="1.2em">Follow-ups</tspan>
+</text>
+<image xlink:href="./img/avanco-rapido.png" x="600" y="310" width="30" height="30" class="arrow" />
+
+<!-- Processo: Gestão de Faturamento -->
+<polygon points="650,250 880,250 880,400 650,400" fill="#FF5733" id="gestaoFaturamento" />
+<text x="765" y="325" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+    <tspan x="765" dy="-0.6em">Gestão de Faturamento</tspan>
+</text>
+
+
+
+
+        </svg>
+    </div>
+
+    <div id="cardOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center; z-index: 999;">
+        <div style="background: #fff; padding: 20px; border-radius: 10px; max-width: 600px;">
+            <h2 id="cardTitle" style="color: #333; margin-bottom: 10px;"></h2>
+            <p id="cardContent" style="color: #666;"></p>
+            <button onclick="closeCard()" style="background: #4285F4; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Fechar</button>
+        </div>
+    </div>
+
+<!-- ... (código anterior) ... -->
+
+<script>
+    const processos = document.querySelectorAll('polygon');
+
+    processos.forEach(processo => {
+        processo.addEventListener('mouseover', () => {
+            processo.style.fill = '#FFD700'; // Mude para a cor desejada ao passar o cursor
+        });
+
+        processo.addEventListener('mouseout', () => {
+            processo.style.fill = processo.getAttribute('fill'); // Restaure a cor original ao tirar o cursor
+        });
+
+        processo.addEventListener('click', () => {
+            openCard(processo.id);
+        });
+    });
+
+    function openCard(processoId) {
+        const cardOverlay = document.getElementById('cardOverlay');
+        const cardTitle = document.getElementById('cardTitle');
+        const cardContent = document.getElementById('cardContent');
+
+        // Lógica para preencher o conteúdo do card com base no ID do processo
+        if (processoId === 'solicitacaoInicial') {
+            cardTitle.textContent = 'Solicitação Inicial';
+            cardContent.innerHTML = `
+                <p><strong>Atividades:</strong></p>
+                <ul>
+                    <li>Recebimento de notificação de novos projetos aprovados pelos Analistas de Projetos.</li>
+                    <li>Comunicação com os Analistas de Projetos para esclarecimentos sobre as solicitações.</li>
+                    <li>Verificação da disponibilidade de produtos de pronta entrega com a expedição.</li>
+                </ul>
+                <p><strong>Ferramentas:</strong></p>
+                <ul>
+                    <li>E-mail</li>
+                    <li>Jira</li>
+                </ul>
+            `;
+        } else if (processoId === 'analiseArquitetura') {
+    cardTitle.textContent = 'Análise da Arquitetura da Solução';
+    cardContent.innerHTML = `
+        <p><strong>Atividades:</strong></p>
+        <ul>
+            <li>Analisa a arquitetura da solução proposta.</li>
+            <li>Verifica a necessidade de integração com aplicações internas, ERP's e CRM's.</li>
+            <li>Registra informações relevantes no Jira e HubSpot para a Sprint de DEV.</li>
+        </ul>
+        <p><strong>Ferramentas:</strong></p>
+        <ul>
+            <li>Jira</li>
+            <li>HubSpot</li>
+        </ul>
+    `;
+        } else if (processoId === 'insercaoSprintsSuporte') {
+            cardTitle.textContent = 'Inserção nas Sprints de Suporte';
+            cardContent.innerHTML = `
+                <p><strong>Atividades:</strong></p>
+                <ul>
+                    <li>Coordena a inserção dos novos projetos nas sprints de suporte.</li>
+                    <li>Administra as sprints de cada tecnologia (Inovaone, Inova Rotas, Inova Printer, Box Pay, Inova Suporte) para garantir eficiência e qualidade na entrega.</li>
+                </ul>
+                <p><strong>Ferramentas:</strong></p>
+                <ul>
+                    <li>Jira</li>
+                    <li>HubSpot</li>
+                </ul>
+            `;
+        } else if (processoId === 'gestaoEquipamentos') {
+            cardTitle.textContent = 'Gestão de Equipamentos';
+            cardContent.innerHTML = `
+                <p><strong>Atividades:</strong></p>
+                <ul>
+                    <li>Verifica a disponibilidade de equipamentos necessários.</li>
+                    <li>Inicia o processo de compra se os equipamentos não estiverem disponíveis.</li>
+                </ul>
+                <p><strong>Ferramentas:</strong></p>
+                <ul>
+                    <li>HubSpot</li>
+                </ul>
+            `;
+        } else if (processoId === 'montagemTestes') {
+            cardTitle.textContent = 'Montagem e Testes';
+            cardContent.innerHTML = `
+                <p><strong>Atividades:</strong></p>
+                <ul>
+                    <li>Encaminha os equipamentos para o suporte para a montagem e testes.</li>
+                    <li>Supervisiona a integração e os testes de equipamentos.</li>
+                </ul>
+                <p><strong>Ferramentas:</strong></p>
+                <ul>
+                    <li>Jira</li>
+                    <li>HubSpot</li>
+                </ul>
+            `;
+        } else if (processoId === 'confirmacaoDetalhes') {
+            cardTitle.textContent = 'Confirmação de Detalhes';
+            cardContent.innerHTML = `
+                <p><strong>Atividades:</strong></p>
+                <ul>
+                    <li>Confirma o endereço e alinha os prazos com o cliente.</li>
+                </ul>
+                <p><strong>Ferramentas:</strong></p>
+                <ul>
+                    <li>HubSpot</li>
+                </ul>
+            `;
+        } else if (processoId === 'monitoramentoFollowUps') {
+            cardTitle.textContent = 'Monitoramento e Follow-ups';
+            cardContent.innerHTML = `
+                <p><strong>Atividades:</strong></p>
+                <ul>
+                    <li>Monitora o envio dos equipamentos e a realização dos testes de integração.</li>
+                    <li>Direciona as equipes internas para fornecer treinamento aos clientes.</li>
+                    <li>Realiza follow-ups diários ou semanais para identificar e antecipar problemáticas.</li>
+                </ul>
+                <p><strong>Ferramentas:</strong></p>
+                <ul>
+                    <li>HubSpot</li>
+                    <li>Jira</li>
+                </ul>
+            `;
+        }else if (processoId === 'gestaoFaturamento') {
+        cardTitle.textContent = 'Gestão de Faturamento';
+        cardContent.innerHTML = `
+            <p><strong>Atividades:</strong></p>
+            <ol>
+                <li>Gerencia o processo de faturamento para os projetos concluídos.</li>
+                <li>Verifica e confirma os dados de faturamento com a equipe financeira.</li>
+                <li>Confirma se estão sendo pagas mensalidades, incluindo sistemas, software e treinamentos.</li>
+                <li>Garante a entrega de faturas aos clientes de acordo com os termos contratuais.</li>
+            </ol>
+            <p><strong>Ferramentas:</strong></p>
+            <ul>
+                <li>HubSpot</li>
+                <li>Drive</li>
+                <li>Omie</li>
+            </ul>
+        `;
+    }
+        // Adicione mais blocos 'else if' para outros processos conforme necessário
+
+        cardOverlay.style.display = 'flex';
+    }
+
+    function closeCard() {
+        const cardOverlay = document.getElementById('cardOverlay');
+        cardOverlay.style.display = 'none';
+    }
+</script>
+</body>
+</html>
+
+
+
+

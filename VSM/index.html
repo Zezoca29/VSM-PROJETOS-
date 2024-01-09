@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Value Stream Map (Analista de Projetos)</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #0066cc, #003366); /* Gradiente azul escuro para azul claro */
+        }
+
+        #container {
+            text-align: center;
+        }
+
+        svg {
+            cursor: pointer;
+            border: none; /* Removido a borda */
+            background: linear-gradient(to bottom, #6c00d0, #99ccff); /* Gradiente azul claro para azul mais claro */
+            margin-top: 20px; /* Ajuste da margem no topo do svg */
+            border-radius: 0; /* Removido o arredondamento dos cantos */
+            position: relative;
+        }
+
+        text {
+            pointer-events: none;
+            font-weight: bold;
+            fill: #fff;
+        }
+
+        h1 {
+            color: #fff; /* Alterado para branco */
+            padding: 10px; /* Adicionado espaço interno ao header */
+            margin: 0; /* Removido a margem padrão do h1 */
+        }
+
+        .arrow {
+            fill: #666;
+            stroke: none;
+            transform-origin: 50% 50%;
+        }
+
+        .arrow-down {
+            fill: #666;
+            stroke: none;
+            transform-origin: 50% 50%;
+            transform: rotate(180deg);
+        }
+
+        #logoInovacode {
+            position: absolute;
+            left: 50px; /* Ajuste da posição conforme necessário */
+            width: 120px; /* Reduzido o tamanho da logo */
+            height: auto;
+        }
+
+        #logoLeanSixSigma {
+            position: absolute;
+            top: 13px;
+            left: 190px; /* Ajuste da posição conforme necessário */
+            width: 50px; /* Reduzido o tamanho da logo */
+            height: auto;
+        }
+
+        polygon {
+            stroke: #fff; /* Adicionada cor da borda branca */
+            stroke-width: 3; /* Adicionada largura da borda */
+            transition: box-shadow 1s; /* Adicionada transição para o efeito de sombra no hover */
+        }
+
+        polygon:hover {
+            box-shadow: 0 0 20px 20px rgb(255, 3, 3); /* Efeito de sombra no hover */
+        }
+
+        /* Cores mais intensas para os polígonos */
+        #solicitacaoInicial {
+            fill: #4285F4;
+        }
+
+        #comunicacaoVendedor {
+            fill: #FBBC05;
+        }
+
+        #puxarProposta {
+            fill: #34A853;
+        }
+
+        #verificacaoPOC {
+            fill: #EA4335;
+        }
+
+        #analiseArquitetura {
+            fill: #673AB7;
+        }
+
+        #revisaoContratoPOC {
+            fill: #1E88E5;
+        }
+
+        #solicitacaoContratoJuridico {
+            fill: #FFA726;
+        }
+
+        #documentacaoAnaliseDados {
+            fill: #43A047;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="./img/Inovacode_logo_branca_2-removebg-preview.png" alt="Inovacode Logo" id="logoInovacode">
+        <img src="./img/logo_black_betl_six_sigma-removebg-preview.png" alt="Lean Six Sigma Logo" id="logoLeanSixSigma">
+        <h1>Value Stream Map (Analista de Projetos)</h1>
+        <svg width="1500" height="800" id="leanSvg">
+            <!-- Adicione setas -->
+            <!-- Adicione setas -->
+            <polygon points="1400,150 1420,160 1420,140" class="arrow" />
+
+            <!-- Processo: Solicitação Inicial -->
+            <polygon points="50,50 280,50 280,200 50,200" fill="#4285F4" id="solicitacaoInicial" />
+            <text x="165" y="125" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+                <tspan x="165" dy="-0.6em">Solicitação Inicial</tspan>
+            </text>
+            <image xlink:href="./img/avanco-rapido.png" x="300" y="110" width="30" height="30" class="arrow" />
+
+            <!-- Processo: Comunicação com o Vendedor -->
+            <polygon points="350,50 580,50 580,200 350,200" fill="#FBBC05" id="comunicacaoVendedor" />
+            <text x="465" y="125" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+                <tspan x="465" dy="-0.6em">Comunicação com</tspan>
+                <tspan x="465" dy="1.2em">o Vendedor</tspan>
+            </text>
+            <image xlink:href="./img/avanco-rapido.png" x="600" y="110" width="30" height="30" class="arrow" />
+
+            <!-- Processo: Puxar Proposta Comercial e Valores -->
+            <polygon points="650,50 880,50 880,200 650,200" fill="#34A853" id="puxarProposta" />
+            <text x="765" y="125" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+                <tspan x="765" dy="-0.6em">Puxar Proposta</tspan>
+                <tspan x="765" dy="1.2em">Comercial e Valores</tspan>
+            </text>
+            <image xlink:href="./img/avanco-rapido.png" x="900" y="110" width="30" height="30" class="arrow" />
+
+            <!-- Processo: Verificação de POC -->
+            <polygon points="950,50 1180,50 1180,200 950,200" fill="#EA4335" id="verificacaoPOC" />
+            <text x="1065" y="125" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+                <tspan x="1065" dy="-0.6em">Verificação de POC</tspan>
+            </text>
+            <image xlink:href="./img/avanco-rapido.png" x="1200" y="110" width="30" height="30" class="arrow" />
+
+            <!-- Processo: Análise da Arquitetura da Solução -->
+            <polygon points="1250,50 1480,50 1480,200 1250,200" fill="#673AB7" id="analiseArquitetura" />
+            <text x="1365" y="125" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+                <tspan x="1365" dy="-0.6em">Análise da Arquitetura</tspan>
+                <tspan x="1365" dy="1.2em">da Solução</tspan>
+            </text>
+
+            <!-- Processo: Revisão e Solicitação de Contrato para POC -->
+            <polygon points="50,250 280,250 280,400 50,400" fill="#1E88E5" id="revisaoContratoPOC" />
+            <text x="165" y="325" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+                <tspan x="165" dy="-0.6em">Revisão e Solicitação</tspan>
+                <tspan x="165" dy="1.2em">de Contrato para POC</tspan>
+            </text>
+            <image xlink:href="./img/avanco-rapido.png" x="300" y="310" width="30" height="30" class="arrow" />
+
+            <!-- Processo: Solicitação de Contrato Jurídico e Assinatura -->
+            <polygon points="350,250 580,250 580,400 350,400" fill="#FFA726" id="solicitacaoContratoJuridico" />
+            <text x="465" y="325" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+                <tspan x="465" dy="-0.6em">Solicitação de Contrato</tspan>
+                <tspan x="465" dy="1.2em">Jurídico e Assinatura</tspan>
+            </text>
+            <image xlink:href="./img/avanco-rapido.png" x="600" y="310" width="30" height="30" class="arrow" />
+
+            <!-- Processo: Documentação e Avanço com a Análise de Dados -->
+            <polygon points="650,250 880,250 880,400 650,400" fill="#43A047" id="documentacaoAnaliseDados" />
+            <text x="765" y="325" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="#fff">
+                <tspan x="765" dy="-0.6em">Documentação e Avanço</tspan>
+                <tspan x="765" dy="1.2em">com a Análise de Dados</tspan>
+            </text>
+
+            <!-- Adicione outros polígonos aqui -->
+        </svg>
+    </div>
+
+    <div id="cardOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center; z-index: 999;">
+        <div style="background: #fff; padding: 20px; border-radius: 10px; max-width: 600px;">
+            <h2 id="cardTitle" style="color: #333; margin-bottom: 10px;"></h2>
+            <p id="cardContent" style="color: #666;"></p>
+            <button onclick="closeCard()" style="background: #4285F4; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Fechar</button>
+        </div>
+    </div>
+
+<!-- ... (código anterior) ... -->
+
+<script>
+    const processos = document.querySelectorAll('polygon');
+
+    processos.forEach(processo => {
+        processo.addEventListener('mouseover', () => {
+            processo.style.fill = '#FFD700'; // Mude para a cor desejada ao passar o cursor
+        });
+
+        processo.addEventListener('mouseout', () => {
+            processo.style.fill = processo.getAttribute('fill'); // Restaure a cor original ao tirar o cursor
+        });
+
+        processo.addEventListener('click', () => {
+            openCard(processo.id);
+        });
+    });
+
+    function openCard(processoId) {
+        const cardOverlay = document.getElementById('cardOverlay');
+        const cardTitle = document.getElementById('cardTitle');
+        const cardContent = document.getElementById('cardContent');
+
+        // Lógica para preencher o conteúdo do card com base no ID do processo
+        if (processoId === 'solicitacaoInicial') {
+            cardTitle.textContent = 'Solicitação Inicial';
+            cardContent.innerHTML = `
+                <p><strong>Atividades:</strong></p>
+                <ul>
+                    <li>Recebimento de solicitação de projeto do Matheus ou de um vendedor.</li>
+                </ul>
+                <p><strong>Ferramentas:</strong></p>
+                <ul>
+                    <li>Comunicação via e-mail, HubSpot.</li>
+                </ul>
+            `;
+        } else if (processoId === 'comunicacaoVendedor') {
+            cardTitle.textContent = 'Comunicação com o Vendedor';
+            cardContent.innerHTML = `
+                <p><strong>Atividades:</strong></p>
+                <ul>
+                    <li>Comunicar-se com o vendedor para esclarecimentos sobre a solicitação.</li>
+                </ul>
+                <p><strong>Ferramentas:</strong></p>
+                <ul>
+                    <li>HubSpot, e-mail.</li>
+                </ul>
+            `;
+        } else if (processoId === 'puxarProposta') {
+            cardTitle.textContent = 'Puxar Proposta Comercial e Valores';
+            cardContent.innerHTML = `
+                <p><strong>Atividades:</strong></p>
+                <ul>
+                    <li>Puxar proposta comercial e valores do pedido.</li>
+                </ul>
+                <p><strong>Ferramentas:</strong></p>
+                <ul>
+                    <li>HubSpot, Documentação no Google Drive.</li>
+                </ul>
+            `;
+        } else if (processoId === 'verificacaoPOC') {
+            cardTitle.textContent = 'Verificação de POC';
+            cardContent.innerHTML = `
+                <p><strong>Atividades:</strong></p>
+                <ul>
+                    <li>Verificar se haverá uma Prova de Conceito (POC).</li>
+                    <li>Puxar detalhes da POC (local, valores para almoço, tempo de viagem, custo para ida e volta).</li>
+                </ul>
+                <p><strong>Ferramentas:</strong></p>
+                <ul>
+                    <li>HubSpot, Documentação no Google Drive.</li>
+                </ul>
+            `;
+        } else if (processoId === 'analiseArquitetura') {
+            cardTitle.textContent = 'Análise da Arquitetura da Solução';
+            cardContent.innerHTML = `
+                <p><strong>Atividades:</strong></p>
+                <ul>
+                    <li>Realizar uma análise detalhada da arquitetura da solução.</li>
+                    <li>Documentar peculiaridades do cenário, particularidades do cliente, detalhes técnicos, integrações previstas.</li>
+                </ul>
+                <p><strong>Ferramentas:</strong></p>
+                <ul>
+                    <li>Documentação no Google Drive e HubSpot.</li>
+                </ul>
+            `;
+        } else if (processoId === 'revisaoContratoPOC') {
+            cardTitle.textContent = 'Revisão e Solicitação de Contrato para POC';
+            cardContent.innerHTML = `
+                <p><strong>Atividades:</strong></p>
+                <ul>
+                    <li>Revisar todas as informações e esclarecer pontos.</li>
+                    <li>Solicitar contrato para projeto de comodato se aplicável.</li>
+                </ul>
+                <p><strong>Ferramentas:</strong></p>
+                <ul>
+                    <li>HubSpot, Comunicação via e-mail.</li>
+                </ul>
+            `;
+        } else if (processoId === 'solicitacaoContratoJuridico') {
+            cardTitle.textContent = 'Solicitação de Contrato Jurídico e Assinatura';
+            cardContent.innerHTML = `
+                <p><strong>Atividades:</strong></p>
+                <ul>
+                    <li>Solicitar contrato jurídico.</li>
+                    <li>Solicitar ao vendedor para enviar o contrato assinado pelo cliente.</li>
+                </ul>
+                <p><strong>Ferramentas:</strong></p>
+                <ul>
+                    <li>HubSpot, Documentação no Google Drive.</li>
+                </ul>
+            `;
+        } else if (processoId === 'documentacaoAnaliseDados') {
+            cardTitle.textContent = 'Documentação e Avanço com a Análise de Dados';
+            cardContent.innerHTML = `
+                <p><strong>Atividades:</strong></p>
+                <ul>
+                    <li>Documentar todos os passos anteriores.</li>
+                    <li>Avançar com a análise de dados do projeto.</li>
+                </ul>
+                <p><strong>Ferramentas:</strong></p>
+                <ul>
+                    <li>HubSpot, Documentação no Google Drive.</li>
+                </ul>
+            `;
+        }
+        // Adicione mais blocos 'else if' para outros processos conforme necessário
+
+        cardOverlay.style.display = 'flex';
+    }
+
+    function closeCard() {
+        const cardOverlay = document.getElementById('cardOverlay');
+        cardOverlay.style.display = 'none';
+    }
+</script>
+
+
+
+
