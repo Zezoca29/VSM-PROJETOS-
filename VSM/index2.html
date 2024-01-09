@@ -19,6 +19,25 @@
             text-align: center;
         }
 
+        #btnBack {
+            position: absolute;
+            top: 10px;
+            right: 20px; /* Ajustado para levar mais para a direita */
+            padding: 15px; /* Aumentado o tamanho do botão */
+            background-color: #4285F4;
+            color: #fff;
+            border: 2px solid #fff; /* Adicionada borda branca */
+            border-radius: 8px; /* Ajustada a borda arredondada */
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s; /* Adicionada transição */
+        }
+
+        #btnBack:hover {
+            background-color: #fff;
+            color: #4285F4;
+        }
+
+
         svg {
             cursor: pointer;
             border: none; /* Removido a borda */
@@ -117,6 +136,7 @@
         <img src="./img/Inovacode_logo_branca_2-removebg-preview.png" alt="Inovacode Logo" id="logoInovacode">
         <img src="./img/logo_black_betl_six_sigma-removebg-preview.png" alt="Lean Six Sigma Logo" id="logoLeanSixSigma">
         <h1>Value Stream Map (Coordenador de Projetos)</h1>
+        <button id="btnBack" onclick="goBack()">Voltar</button>
         <svg width="1500" height="800" id="leanSvg">
             <!-- Adicione setas -->
             <!-- Adicione setas -->
@@ -192,7 +212,11 @@
         </div>
     </div>
 
-<!-- ... (código anterior) ... -->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
 <script>
     const processos = document.querySelectorAll('polygon');
