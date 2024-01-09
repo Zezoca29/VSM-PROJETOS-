@@ -1,9 +1,12 @@
 {
     "version": 2,
-    "builds": [{ "src": "base.html", "use": "@vercel/static-build" }],
+    "builds": [
+      { "src": "src/base.html", "use": "@now/static" }
+    ],
     "routes": [
-      { "handle": "filesystem" },
-      { "src": "/(.*)", "dest": "/base.html" }
-    ]
+      { "src": "/(.*\\.(html|js|css))", "dest": "/src/$1" },
+      { "src": "/.*", "dest": "/src/base.html" }
+    ],
+    "public": false
   }
   
